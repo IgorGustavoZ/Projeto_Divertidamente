@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root{
+    --cor-fundo-personagens: #431475;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body{
     margin: 0px;
     background-color: black;
@@ -12,8 +23,8 @@ header{
     background-image: url(../imagens/banner2.jpeg);
     background-size: cover;
     background-attachment: fixed;
-    background-position: top center;
-    padding: 7vh;
+    background-position: bottom center;
+    padding: 88px;
     
     background-color: blue;
     color: white;
@@ -22,10 +33,10 @@ header>h1{
     font-family: "Anton SC", sans-serif;
     font-weight: 400;
     font-style: normal;
+
     text-align: center;
-    font-size: 300%;
+    font-size: 4em;
     margin: 0px;
-    letter-spacing: 0.5vw;
     font-variant: small-caps;
 
     text-shadow: 0px 6px 20px rgba(0, 0, 0, 0.548);
@@ -42,7 +53,7 @@ main{
     box-shadow: 4px 7px 20px rgba(0, 0, 0, 0.24);
     
     border-radius: 0px 0px 5px 5px;
-    max-width: 900px;
+    max-width: 1000px;
     background-color: white;
     padding: 30px;
 }
@@ -88,24 +99,52 @@ aside{
     height: 40vw; 
 }
 
-article > img{
-    
-    max-width: 30%;
-    max-height: 30%;
-
-    min-width: 230px;
-    min-height: 230px;
-    margin-left: 10%;
-
-    border: 2px solid #4D3273;
+div.personagens{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--cor-fundo-personagens);
+    margin: -30px;
+    padding: 10px;
+    color: white;
 }
 
-article > img:hover{
-    transform: translateX(10vw);
-    transition-duration: 1s;
-    border-left: 40px solid #4D3273;
-    border-right: 40px solid #4D3273;
-    border-radius: 10px;
+h3{
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-left: 10px;
+    background-color: var(--cor-fundo-personagens);
+    margin: -30px;
+    color: white;
+    padding-left: 30px;
+}
+
+p{
+    padding: 10px 5px;
+    margin-right: 10px;
+}
+
+div.personagens img{
+    height: 70%;
+    border: 10px solid white;
+    margin: 10px;
+}
+ 
+div.personagens img:hover{
+    animation: imagens-animacao 1s infinite alternate;
+}
+
+@keyframes imagens-animacao {
+    from{
+        transform: scale(100%);
+    }
+    to{
+        transform: scale(105%);
+    }
+}
+
+.personagens p{
+    text-align: justify;
+    margin-left: 0px;
 }
 
 section > h3::before{
@@ -141,6 +180,9 @@ footer ul a{
     text-decoration: none;
     font-weight: bold;
     color: black;
+    border: 2px solid black;
+    padding: 5px 10px;
+    border-radius:6px;
 }
 
 footer ul a:hover{
